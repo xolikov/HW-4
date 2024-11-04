@@ -1,6 +1,3 @@
-#include <bits/stdc++.h>
-using namespace std;
-
 int floorFunction(float n) {
     return static_cast<int>(n);
 }

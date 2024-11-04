@@ -1,6 +1,3 @@
-#include <string>
-using namespace std;
-
 int floorFunction(float n) {
     return static_cast<int>(n);
 }
@@ -28,9 +25,16 @@ int calculate(int n) {
     return n % 10 + calculate(n / 10);
 }
 
-string bin(int n) {
-    if (n == 0) return "";
-    return bin(n / 2) + to_string(n % 2);
+int bin(int n) {
+    if (n == 0) return 0;
+    int pos = 1;
+    int bin = 0;
+    while (n > 0) {
+        bin += (n % 2) * pos;
+        n /= 2;
+        pos *= 10;
+    }
+    return bin;
 }
 
 int midValue(int a, int b, int c) {
